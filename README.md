@@ -4,6 +4,8 @@
 
 #### [油管-无限次元](https://www.youtube.com/channel/UCnmVomF61vO0EBD-sMXH4lg)
 
+#### [我的博文库](https://github.com/becomequantum/MyBlog)
+
 #### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
 
