@@ -1,12 +1,8 @@
+联系请用: B站私信 或Discord：becomequantum
 
-### B站频道（联系请用: B站私信 或Discord：becomequantum）：
-### [B站-无限次元](https://space.bilibili.com/2139404925)
+### [我的博文库](https://github.com/becomequantum/MyBlog) [Nassim Haramein全息分形宇宙](https://github.com/becomequantum/MyBlog/tree/main/%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D)
 
-#### [油管-无限次元](https://www.youtube.com/channel/UCnmVomF61vO0EBD-sMXH4lg)
-
-#### [我的博文库](https://github.com/becomequantum/MyBlog)
-
-#### B站视频：
+### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
 
 [手写Verilog用FPGA实现实时图像卷积，用Block Ram缓存图像](https://www.bilibili.com/video/BV1B3411W7Ht) 这个代码“Verilog”里有 
