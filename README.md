@@ -1,6 +1,6 @@
 联系请用: B站私信 或Discord：becomequantum
 
-### [我的博文库](https://github.com/becomequantum/MyBlog) [Nassim Haramein全息分形宇宙](https://github.com/becomequantum/MyBlog/tree/main/%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D)
+### [我的博文库](https://github.com/becomequantum/MyBlog)    [Nassim Haramein全息分形宇宙](https://github.com/becomequantum/MyBlog/tree/main/%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D)
 
 ### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
