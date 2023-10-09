@@ -1,6 +1,8 @@
 ﻿//B站无限次元: https://space.bilibili.com/2139404925  https://github.com/becomequantum/Kryon  
 #pragma once 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <concepts> //VS语言标准要设为: C++20
 #include <chrono>
 #include <string>
@@ -11,6 +13,8 @@
 #include <boost/regex.hpp>      //vcpkg 可以自动安装这个库
 #include <boost/regex/icu.hpp>  //还需要icu这个Unicode官方库,vcpkg也可以装
 #include <vector>
+#include <Windows.h>//MultiByteToWideChar
+#include <simdutf.h> //SIMD utf-8和Unicode互转 https://github.com/simdutf/simdutf  vcpkg 可安装
 
 constexpr size_t 大小 = 100000000; //用了很大的数组,会报栈溢出,VS里修改:链接器->系统->堆栈保留大小 为1600000000(8个0) 就可以了
 using 串 = std::string;
@@ -160,7 +164,7 @@ void 正则测速(const char16_t* 文本, const char16_t* 正则字串) {
 
 void 正则引擎测试() {
 	std::cout << "---C++ Boost正则引擎测速:\n";
-	constexpr size_t 串长 = 500000; //40万,大概超过这个数boost U32迭代器就会出bug
+	constexpr size_t 串长 = 10000000; //40万,大概超过这个数boost U32迭代器就会出bug
 	char16_t U16长串[串长], U16正则[80 + 1], 读;//前面加u字串的编码就是Unicode 16,似乎只能放在"const char16_t*"里
 	{
 		计时器 计时(std::to_string(串长) + "长char16填充");
@@ -173,9 +177,79 @@ void 正则引擎测试() {
 		U16正则[i + 1] = u'|';
 	}//构造 一|丁|丂|七...这样的正则表达式,最后一个字符不能是'|'
 	U16正则[正则长] = u'蛙';
-	正则测速(U16长串, u"\\w"); //用Unicode模式,正则字符串也得是Unicode的,匹配结果有点问题,最后四个数据好像够不着
+	//正则测速(U16长串, u"\\w"); //用Unicode模式,正则字符串也得是Unicode的,匹配结果有点问题,最后四个数据好像够不着
 	//40万,都匹配上,耗时66ms,C#要200ms,也存在匹配结果越多耗时越多的现象.u"\\w" 60ms u"\\w+"极速
 	//40个字符用|连起来同时匹配上耗时180ms,看来也存在同时匹配的词越多,耗时也增多的现象.
+	std::cout << (int)U16长串[999999] << "\n";
+}
+
+std::wstring utf8_decode(const std::string& str) {//输入的string是utf-8, 输出wstring是Unicode
+	if (str.empty()) return std::wstring();
+	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+	std::wstring wstrTo(size_needed, 0);
+	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+	return wstrTo;
+}//https://stackoverflow.com/questions/215963/how-do-you-properly-use-widechartomultibyte
+
+std::string Unicode转其它(const std::wstring& wstr, size_t 输出编码) {
+	if (wstr.empty()) return std::string();
+	int size_needed = WideCharToMultiByte(输出编码, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+	std::string strTo(size_needed, 0);
+	WideCharToMultiByte(输出编码, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+	return strTo;
+}//输入Unicode wstring, 输出编码为 CP_UTF8 就转为utf-8, CP_ACP就转为ANSI. https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-widechartomultibyte
+
+std::wstring SIMD_utf8_decode(const std::string& 字串u8) {
+	if (字串u8.empty()) return std::wstring();
+	size_t U16字符长 = simdutf::utf16_length_from_utf8(字串u8.c_str(), 字串u8.length()); //先要看看字符长度, 好确定接收转换结果的wstring长度
+	std::wstring 宽串(U16字符长, 0);
+	simdutf::convert_utf8_to_utf16le(字串u8.c_str(), 字串u8.length(), (char16_t *)宽串.c_str()); //windows下char16_t和wchar_t互转没事
+	return 宽串;
+}
+
+void 字串格式测试() {
+	std::string 字串   = "a一";     //string里存的是char, wstring里存的是wchar_t
+	char  串ANSI[]    = "a一";     //如果用MSC编译,默认字串是ANSI编码的, 可以正确打印中文, 其余的几种char数组都不能直接打印. 页面编码936的控制台中只能正确打印ANSI编码的字串. cin输入的字串也是ANSI编码的. 
+	                                          //如果用clang编译,默认字串是utf-8编码的, 要用chcp 65001命令修改控制台页面编码之后才能正确显示
+	char8_t  串uft8[] = u8"a一"; //如果把文本文件直接读入字串中, 编码就是uft-8
+	wchar_t  串w[]    = L"a一";   //wchar_t是implementation-defined宽字符类型, 在windows和微软编译器中它是两字节的,存的是Unicode-16LE, 和char16_t是一样的.
+	char16_t 串u16[]  = u"a一";  //UTF-16, windows上和wchar_t一样. 微软这个文档有详细解释: https://learn.microsoft.com/en-us/cpp/cpp/char-wchar-t-char16-t-char32-t?view=msvc-170
+	char32_t 串u32[] = U"a一"; //32位Unicode
+	std::cout << " 字串:   " << 字串 << "  字串'a一'长度: "<< 字串.length() << std::endl;
+	std::cout << " 串ANSI: " << 串ANSI << std::endl;
+	std::wcout << " 串w: " << 串w;  //wcout可以打印wchar和wstring, 但中文打印不出来, 中文只能用ANSI码才能正确打印
+	std::cout << "\n 默认字串为ANSI编码: 'a'的码: " <<std::hex<< (int)字串[0] <<"   '一'的码: " << (int)(uint8_t)字串[1] << " " << (int)(uint8_t)字串[2] << "   这是'一'的GB2312编码"<<std::endl;
+	std::cout << " 串uft8字节长度: " << sizeof(串uft8) << "   'a'占一个字节,'一'三个字节,终结'0'一字节" << std::endl;
+	std::cout << " 'a一'的utf-8码:   " << (int)串uft8[0] << "   " << (int)串uft8[1] << " " << (int)串uft8[2] << " " << (int)串uft8[3] << " \n";
+	std::cout << " 'a一'的Unicode码: " << (int)串u16[0] << "   " << (int)串u16[1] << " \n";
+
+	std::string 字串u8 = (char*)u8"一"; //得强转
+	std::wstring 宽串 = utf8_decode(字串u8);  //utf-8 string转Unicode wstring
+	std::cout << " 宽串长: " << 宽串.length() << "   码: " << (int)宽串[0] << std::endl;
+	std::wstring 宽串u16 = (wchar_t*)串u16;
+	std::string 字串ANSI = Unicode转其它(宽串u16, CP_ACP); //Unicode转ANSI
+	std::cout << " Unicode字串转为ANSI编码就能正确打印出中文了(MSC编译): "<<字串ANSI << std::endl; //Clang编译要转为utf-8
+
+	std::ostringstream sstream;
+	std::ifstream fs("input-text.txt"); //https://github.com/mariomka/regex-benchmark/tree/optimized
+	if (!fs.good()) std::cout << "文件不存在!\n";
+	sstream << fs.rdbuf();
+	const std::string 文本(sstream.str());
+	std::cout << " 文本字节长度: " << std::dec <<文本.size() << "  文件这样读入string是uft-8编码的, 长度就是字节长度,也就是文件大小,不是里面有多少个字符\n" << std::endl;
+	size_t Unicode字符长度;
+	{
+		计时器 计时(" Win自带函数转Unicode耗时: ");
+		auto 文本Unicode = utf8_decode(文本);
+		Unicode字符长度 = 文本Unicode.length();
+	}
+	std::cout << " Unicode字符长度: " << Unicode字符长度 << std::endl;
+
+	{
+		计时器 计时(" SIMD utf-8转Unicode耗时: "); //这个能跨平台, 速度比上面快了大概2.5倍
+		auto 文本Unicode = SIMD_utf8_decode(文本); 
+	    Unicode字符长度 = 文本Unicode.length();
+	}
+	std::cout << " Unicode字符长度: " << Unicode字符长度 << std::endl;
 }
 
 #pragma endregion
@@ -184,11 +258,9 @@ int main()
 {
 	std::cout << "C++性能测试:\n\n";
 	栈和堆数组测试(); //读比写快,C#和C++差不多
-	
 	哈希表测试();
-
 	正则引擎测试();
-	
+	字串格式测试();
 }
 //C++在智能提示和报错方面远不如C#,看来C四个+的确要好用一些. 有些地方少打个;会报"内部编译错误".         
 
