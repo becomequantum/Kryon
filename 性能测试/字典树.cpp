@@ -10,7 +10,7 @@
 #include <queue>
 #include <map>
 #include <iomanip>  //std::setw
-#include <Windows.h> //这个要放在上一行的后面, 不然ska哈希表的代码会报错
+#include <Windows.h> 
 
 //B站無限次元: https://space.bilibili.com/2139404925  https://github.com/becomequantum/Kryon  
 //用了很大的数组,会报栈溢出,VS里修改:项目->属性->链接器->系统->堆栈保留大小 为1600000000(8个0) 就可以了
