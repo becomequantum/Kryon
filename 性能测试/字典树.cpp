@@ -10,7 +10,6 @@
 #include <queue>
 #include <map>
 #include <iomanip>  //std::setw
-#include <ska/flat_hash_map.hpp> //https://github.com/skarupke/flat_hash_map 直接下载包含进来就能用
 #include <Windows.h> //这个要放在上一行的后面, 不然ska哈希表的代码会报错
 
 //B站無限次元: https://space.bilibili.com/2139404925  https://github.com/becomequantum/Kryon  
@@ -206,11 +205,7 @@ public:
     }
 };
 
-struct custom_hash { size_t operator()(int x) const { return x; } };//用来替换哈希表里的默认hash函数,用整型做key不需要hash
-//using ska哈希表 = ska::flat_hash_map<int, int, custom_hash>;
-//using ska哈希表 = std::unordered_map<int, int, custom_hash>;
-//using 查找表 = std::map<int, int>;
-using 查找表 = ska::flat_hash_map<int, int, custom_hash>;
+using 查找表 = std::map<int, int>;
 
 struct 横表哈希节点 {
     int 词序号 = -1;
