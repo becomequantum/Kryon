@@ -12,3 +12,5 @@
 [如何设计AI难识别的验证码？](https://www.bilibili.com/video/BV1CV411u7XV) 
 
 [Rust，C#，C++，Nim，Python正则引擎和哈希表性能大比拼](https://www.bilibili.com/video/BV1Mu411w7q3) 这个代码在"性能测试"里
+
+[C++实现AC自动机，剪枝、双数组压缩字典树！](https://www.bilibili.com/video/BV1BM41197u2/) 代码在“性能测试”“字典树”里
