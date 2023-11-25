@@ -1,6 +1,6 @@
 联系请用: B站私信 或Discord：becomequantum
 
-[** 警惕人工智能的虚假觉醒](https://zhuanlan.zhihu.com/p/668809239)
+[**警惕人工智能的虚假觉醒**](https://zhuanlan.zhihu.com/p/668809239)
 
 ### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
