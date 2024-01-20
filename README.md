@@ -2,6 +2,10 @@
 
 [**警惕人工智能的虚假觉醒**](https://zhuanlan.zhihu.com/p/668809239)
 
+### 想摆脱长新冠和喵后症的去MyBlog这个库看看
+
+[MyBlog](https://github.com/becomequantum/MyBlog)
+
 ### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
 
