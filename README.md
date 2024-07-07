@@ -2,6 +2,10 @@
 
 ### 有阳或苗后遗症、或其它健康问题的可以看看另外一个库：
  [我的博文库](https://github.com/becomequantum/MyBlog) 这里面还有《巨婴国》《与神对话》《全息分形宇宙》电子书 
+
+### 能下载到英文电子书的网站：
+[Anna的档案](https://annas-archive.gs/?) 这个网站有些中文书都能搜到 
+[Library Genesis](https://libgen.rs/) 英文教科书，学术专著，很多都能搜到
  
 
 ### B站视频：
