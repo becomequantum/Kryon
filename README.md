@@ -1,5 +1,9 @@
 联系请用: B站私信 
 
+### 有阳或苗后遗症、或其它健康问题的可以看看另外一个库：
+ [我的博文库](https://github.com/becomequantum/MyBlog) 这里面还有《巨婴国》《与神对话》《全息分形宇宙》电子书 
+ 
+
 ### B站视频：
 [FPGA图像处理中二值算子的一些妙用](https://www.bilibili.com/video/BV1WY411L7Bd) 这个视频有介绍“无限次元”这个代码实现的一些功能
 
