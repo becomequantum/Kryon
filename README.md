@@ -1,5 +1,8 @@
 联系请用: B站私信 
 
+### 有健康问题，疫苗或阳后遗症的朋友可看看这个库： 
+[MyBlog](https://github.com/becomequantum/MyBlog)
+
 
 ### 能下载到英文电子书的网站：
 [Anna的档案](https://annas-archive.gs/?) 这个网站有些中文书都能搜到 
