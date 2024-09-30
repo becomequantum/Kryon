@@ -19,4 +19,6 @@
 
 [如何设计AI难识别的验证码？](https://www.bilibili.com/video/BV1CV411u7XV) 
 
+[最小作用量原理，破解“逻辑思维”无需建模神经元，“逻辑推理”有点像走迷宫](https://www.bilibili.com/read/cv38995585)
+
 
