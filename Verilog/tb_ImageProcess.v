@@ -37,7 +37,14 @@
 	 );
 	 
 	*///这段代码用于测试连通域识别模块CCAL.v
-	 always #5 clk = ~clk;
+	  
+/*
+	always@(posedge clk)              //输出连通域识别结果到CCList.txt   
+	   if(OEn)
+         $fwrite(CCListFile,"%d,%d,%d,%d,%d,%d\n",iCCAL.Count,iCCAL.XMin,iCCAL.XMax,iCCAL.YMin,iCCAL.YMax,iCCAL.RealN);
+*///仿真CCAL模块时，需把上面这两块注释的代码取消注释，然后把仿真BinaryOperator9x9这个模块的相关代码注释掉。
+	  
+	 always #5 clk = ~clk;  //时钟信号
 	 
 	 initial begin
 	  clk = 1; R = 0; G = 0; B = 0; RGBEn = 0; 
@@ -63,7 +70,7 @@
 		$finish;
 	 end
 	 
-	 task ImageSimInput;
+	 task ImageSimInput;   //读入BMP位图文件，生存仿真波形
 	 begin
 		repeat(10)@(posedge clk);
 		for(h = BmpHeight - 1; h >= 0; h = h - 1) begin           //最上面第一行数据存在了后面，文件头后面紧接的数据是最下面一行的
@@ -92,7 +99,7 @@
 	 
 	 
 	 
-	 //保存9x9二值算子的计算结果.不同的initial块是并行的.
+	 //保存9x9二值算子的计算结果.不同的initial块是并行的. 仿真CCAL时可以把下面这块注释掉
     initial begin 
 	   OutBmpFile1 = $fopen("output.bmp","w");                    //结果保存到了这里打开的bmp文件中，如果文件已存在则会被覆盖。
 		for(i2 = 1; i2 <= 54; i2 = i2 + 1) begin                   //先写入位图54字节的文件头，就是把input.bmp的文件头复制了过来
