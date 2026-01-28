@@ -1,10 +1,7 @@
 联系请用: B站私信 
 
-
-### 能下载到英文电子书的网站：
-[Anna的档案](https://annas-archive.gs/?) 这个网站有些中文书都能搜到 
-
-[Library Genesis](https://libgen.rs/) 英文教科书，学术专著，很多都能搜到
+**[我的博文库](https://github.com/becomequantum/MyBlog)  **
+**[衰老是编程！未来寿命能翻倍？丁克要修行]([https://github.com/becomequantum/MyBlog](https://github.com/becomequantum/MyBlog/blob/main/%E6%88%91%E7%9A%84%E6%96%87%E7%AB%A0/%E8%A1%B0%E8%80%81%E6%98%AF%E7%BC%96%E7%A8%8B%EF%BC%81%E6%9C%AA%E6%9D%A5%E5%AF%BF%E5%91%BD%E8%83%BD%E7%BF%BB%E5%80%8D%EF%BC%9F%E4%B8%81%E5%85%8B%E8%A6%81%E4%BF%AE%E8%A1%8C.md))  **
  
 
 ### B站视频：
@@ -17,5 +14,6 @@
 [如何设计AI难识别的验证码？](https://www.bilibili.com/video/BV1CV411u7XV) 
 
 [最小作用量原理，破解“逻辑思维”无需建模神经元，“逻辑推理”有点像走迷宫](https://www.bilibili.com/read/cv38995585)
+
 
 
