@@ -510,7 +510,7 @@ public partial class 图像 {
 
 public class 参数 {
     static public PixelFormat 像素格式 = PixelFormat.Format24bppRgb;
-    static public int 宽, 高, 笔粗细 = 1, 算子直径 = 3, 胀蚀阈值, 内噪比 = 10, 外噪比 = 10, 随机线条数 = 50;
+    static public int 宽, 高, 笔粗细 = 1, 算子直径 = 3, 胀蚀阈值, 内噪比 = 10, 外噪比 = 10, 随机线条数 = 50, 验证码字符数 = 4;
     static public Color 颜色;
     static public double 红比例, 绿比例, 蓝比例;
     static public double W, b;
@@ -519,7 +519,7 @@ public class 参数 {
     static public bool H使能 = true, S使能 = false, L使能 = false;
     static public bool 显示连通域标记过程 = false;
     static public (bool 黑, bool ALSD) 显示 = (false, false);
-    
+    static public string 验证码字串;
 }
 
 public struct 线段信息 {
