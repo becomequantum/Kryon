@@ -80,6 +80,8 @@ public partial class 功能标签页 : UserControl {
             参数.内噪比 = 100 - Convert.ToInt32(内噪百分比.Text);
             参数.外噪比 = 100 - Convert.ToInt32(外噪百分比.Text);
             参数.随机线条数 = Convert.ToInt32(随机线条.Text);
+            参数.验证码字串 = 验证码字串.Text;
+            参数.验证码字符数 = Convert.ToInt32(验证码字符数.Text);
         } catch (Exception exp) {
             MessageBox.Show(exp.Message + "\n刚才的值设的有问题!");
         }

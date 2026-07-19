@@ -24,7 +24,8 @@ namespace 控件 {
         /// 设计器支持所需的方法 - 不要修改
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(功能标签页));
             切换工具栏 = new ToolStrip();
@@ -92,6 +93,7 @@ namespace 控件 {
             笔粗细 = new TextBox();
             验证码 = new Button();
             panel1 = new Panel();
+            验证码字串 = new TextBox();
             toolStrip4 = new ToolStrip();
             toolStripLabel8 = new ToolStripLabel();
             内噪百分比 = new ToolStripTextBox();
@@ -127,6 +129,8 @@ namespace 控件 {
             S上 = new ToolStripTextBox();
             toolStripSeparator6 = new ToolStripSeparator();
             L上 = new ToolStripTextBox();
+            label字符数 = new Label();
+            验证码字符数 = new TextBox();
             切换工具栏.SuspendLayout();
             点运算参数.SuspendLayout();
             增益参数.SuspendLayout();
@@ -144,7 +148,7 @@ namespace 控件 {
             // 切换工具栏
             // 
             切换工具栏.Dock = DockStyle.None;
-            切换工具栏.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            切换工具栏.Font = new Font("微软雅黑", 10.5F);
             切换工具栏.Items.AddRange(new ToolStripItem[] { 图像处理按钮, 神经网络按钮 });
             切换工具栏.LayoutStyle = ToolStripLayoutStyle.Table;
             切换工具栏.Location = new Point(0, 0);
@@ -156,7 +160,7 @@ namespace 控件 {
             // 图像处理按钮
             // 
             图像处理按钮.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            图像处理按钮.Font = new Font("微软雅黑", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
+            图像处理按钮.Font = new Font("微软雅黑", 10.5F, FontStyle.Bold);
             图像处理按钮.Image = (Image)resources.GetObject("图像处理按钮.Image");
             图像处理按钮.ImageTransparentColor = Color.Magenta;
             图像处理按钮.Margin = new Padding(0);
@@ -192,7 +196,7 @@ namespace 控件 {
             // 
             点运算参数.AutoSize = false;
             点运算参数.Dock = DockStyle.None;
-            点运算参数.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            点运算参数.Font = new Font("微软雅黑", 10.5F);
             点运算参数.Items.AddRange(new ToolStripItem[] { toolStripLabel5, W值, toolStripLabel6, Bias值 });
             点运算参数.LayoutStyle = ToolStripLayoutStyle.Flow;
             点运算参数.Location = new Point(362, 78);
@@ -211,7 +215,7 @@ namespace 控件 {
             // W值
             // 
             W值.BorderStyle = BorderStyle.None;
-            W值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            W值.Font = new Font("微软雅黑", 12F);
             W值.ForeColor = SystemColors.ControlText;
             W值.MaxLength = 5;
             W值.Name = "W值";
@@ -228,7 +232,7 @@ namespace 控件 {
             // Bias值
             // 
             Bias值.BorderStyle = BorderStyle.None;
-            Bias值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Bias值.Font = new Font("微软雅黑", 12F);
             Bias值.ForeColor = SystemColors.ControlText;
             Bias值.MaxLength = 3;
             Bias值.Name = "Bias值";
@@ -239,7 +243,7 @@ namespace 控件 {
             // 随机刷按钮
             // 
             随机刷按钮.AutoSize = true;
-            随机刷按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            随机刷按钮.Font = new Font("宋体", 10.5F);
             随机刷按钮.Location = new Point(300, 2);
             随机刷按钮.Name = "随机刷按钮";
             随机刷按钮.Size = new Size(59, 24);
@@ -253,7 +257,7 @@ namespace 控件 {
             // 
             增益参数.AutoSize = false;
             增益参数.Dock = DockStyle.None;
-            增益参数.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            增益参数.Font = new Font("微软雅黑", 10.5F);
             增益参数.Items.AddRange(new ToolStripItem[] { toolStripLabel4, R比例, toolStripSeparator3, G比例, toolStripSeparator4, B比例 });
             增益参数.LayoutStyle = ToolStripLayoutStyle.Flow;
             增益参数.Location = new Point(362, 53);
@@ -273,7 +277,7 @@ namespace 控件 {
             // R比例
             // 
             R比例.BorderStyle = BorderStyle.None;
-            R比例.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            R比例.Font = new Font("微软雅黑", 12F);
             R比例.ForeColor = Color.Red;
             R比例.MaxLength = 5;
             R比例.Name = "R比例";
@@ -289,7 +293,7 @@ namespace 控件 {
             // G比例
             // 
             G比例.BorderStyle = BorderStyle.None;
-            G比例.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            G比例.Font = new Font("微软雅黑", 12F);
             G比例.ForeColor = Color.Green;
             G比例.MaxLength = 5;
             G比例.Name = "G比例";
@@ -305,7 +309,7 @@ namespace 控件 {
             // B比例
             // 
             B比例.BorderStyle = BorderStyle.None;
-            B比例.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            B比例.Font = new Font("微软雅黑", 12F);
             B比例.ForeColor = Color.Blue;
             B比例.MaxLength = 5;
             B比例.Name = "B比例";
@@ -317,7 +321,7 @@ namespace 控件 {
             // 
             RGB参数.AutoSize = false;
             RGB参数.Dock = DockStyle.None;
-            RGB参数.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            RGB参数.Font = new Font("微软雅黑", 10.5F);
             RGB参数.Items.AddRange(new ToolStripItem[] { RGB标签, R值, toolStripSeparator1, G值, toolStripSeparator2, B值, 选色按钮 });
             RGB参数.LayoutStyle = ToolStripLayoutStyle.Flow;
             RGB参数.Location = new Point(362, 27);
@@ -336,7 +340,7 @@ namespace 控件 {
             // R值
             // 
             R值.BorderStyle = BorderStyle.None;
-            R值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            R值.Font = new Font("微软雅黑", 12F);
             R值.ForeColor = Color.Red;
             R值.MaxLength = 3;
             R值.Name = "R值";
@@ -353,7 +357,7 @@ namespace 控件 {
             // G值
             // 
             G值.BorderStyle = BorderStyle.None;
-            G值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            G值.Font = new Font("微软雅黑", 12F);
             G值.ForeColor = Color.Green;
             G值.MaxLength = 3;
             G值.Name = "G值";
@@ -370,7 +374,7 @@ namespace 控件 {
             // B值
             // 
             B值.BorderStyle = BorderStyle.None;
-            B值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            B值.Font = new Font("微软雅黑", 12F);
             B值.ForeColor = Color.Blue;
             B值.MaxLength = 3;
             B值.Name = "B值";
@@ -382,7 +386,7 @@ namespace 控件 {
             // 选色按钮
             // 
             选色按钮.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            选色按钮.Font = new Font("新宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            选色按钮.Font = new Font("新宋体", 10.5F);
             选色按钮.ForeColor = Color.Purple;
             选色按钮.Image = (Image)resources.GetObject("选色按钮.Image");
             选色按钮.ImageTransparentColor = Color.Magenta;
@@ -397,7 +401,7 @@ namespace 控件 {
             // 
             宽高参数.AutoSize = false;
             宽高参数.Dock = DockStyle.None;
-            宽高参数.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            宽高参数.Font = new Font("微软雅黑", 10.5F);
             宽高参数.Items.AddRange(new ToolStripItem[] { toolStripLabel1, 图宽, toolStripLabel2, 图高, 位宽选择 });
             宽高参数.LayoutStyle = ToolStripLayoutStyle.Flow;
             宽高参数.Location = new Point(362, 2);
@@ -416,7 +420,7 @@ namespace 控件 {
             // 图宽
             // 
             图宽.BorderStyle = BorderStyle.None;
-            图宽.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            图宽.Font = new Font("微软雅黑", 12F);
             图宽.MaxLength = 4;
             图宽.Name = "图宽";
             图宽.Size = new Size(40, 22);
@@ -433,7 +437,7 @@ namespace 控件 {
             // 图高
             // 
             图高.BorderStyle = BorderStyle.None;
-            图高.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            图高.Font = new Font("微软雅黑", 12F);
             图高.MaxLength = 4;
             图高.Name = "图高";
             图高.Size = new Size(40, 22);
@@ -444,7 +448,7 @@ namespace 控件 {
             // 
             位宽选择.DisplayStyle = ToolStripItemDisplayStyle.Text;
             位宽选择.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3 });
-            位宽选择.Font = new Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            位宽选择.Font = new Font("微软雅黑", 9F);
             位宽选择.Image = (Image)resources.GetObject("位宽选择.Image");
             位宽选择.ImageTransparentColor = Color.Magenta;
             位宽选择.Name = "位宽选择";
@@ -469,7 +473,7 @@ namespace 控件 {
             // 刷空图按钮
             // 
             刷空图按钮.AutoSize = true;
-            刷空图按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            刷空图按钮.Font = new Font("宋体", 10.5F);
             刷空图按钮.Location = new Point(300, 27);
             刷空图按钮.Name = "刷空图按钮";
             刷空图按钮.Size = new Size(59, 24);
@@ -514,7 +518,7 @@ namespace 控件 {
             // 点运算按钮
             // 
             点运算按钮.AutoSize = true;
-            点运算按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            点运算按钮.Font = new Font("宋体", 10.5F);
             点运算按钮.Location = new Point(300, 77);
             点运算按钮.Name = "点运算按钮";
             点运算按钮.Size = new Size(59, 24);
@@ -527,7 +531,7 @@ namespace 控件 {
             // 转灰度按钮
             // 
             转灰度按钮.AutoSize = true;
-            转灰度按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            转灰度按钮.Font = new Font("宋体", 10.5F);
             转灰度按钮.Location = new Point(300, 52);
             转灰度按钮.Name = "转灰度按钮";
             转灰度按钮.Size = new Size(59, 24);
@@ -540,7 +544,7 @@ namespace 控件 {
             // 变透明按钮
             // 
             变透明按钮.AutoSize = true;
-            变透明按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            变透明按钮.Font = new Font("宋体", 10.5F);
             变透明按钮.Location = new Point(364, 102);
             变透明按钮.Name = "变透明按钮";
             变透明按钮.Size = new Size(59, 24);
@@ -553,7 +557,7 @@ namespace 控件 {
             // 变RAW按钮
             // 
             变RAW按钮.AutoSize = true;
-            变RAW按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            变RAW按钮.Font = new Font("宋体", 10.5F);
             变RAW按钮.Location = new Point(299, 102);
             变RAW按钮.Name = "变RAW按钮";
             变RAW按钮.Size = new Size(60, 24);
@@ -566,7 +570,7 @@ namespace 控件 {
             // RGB增益按钮
             // 
             RGB增益按钮.AutoSize = true;
-            RGB增益按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            RGB增益按钮.Font = new Font("宋体", 10.5F);
             RGB增益按钮.Location = new Point(427, 102);
             RGB增益按钮.Name = "RGB增益按钮";
             RGB增益按钮.Size = new Size(45, 24);
@@ -579,7 +583,7 @@ namespace 控件 {
             // 二图相减按钮
             // 
             二图相减按钮.AutoSize = true;
-            二图相减按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            二图相减按钮.Font = new Font("宋体", 10.5F);
             二图相减按钮.Location = new Point(477, 102);
             二图相减按钮.Name = "二图相减按钮";
             二图相减按钮.Size = new Size(73, 24);
@@ -592,7 +596,7 @@ namespace 控件 {
             // 画直方图按钮
             // 
             画直方图按钮.AutoSize = true;
-            画直方图按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            画直方图按钮.Font = new Font("宋体", 10.5F);
             画直方图按钮.ForeColor = SystemColors.ControlText;
             画直方图按钮.Location = new Point(226, 2);
             画直方图按钮.Name = "画直方图按钮";
@@ -606,7 +610,7 @@ namespace 控件 {
             // 直方图均衡化按钮
             // 
             直方图均衡化按钮.AutoSize = true;
-            直方图均衡化按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            直方图均衡化按钮.Font = new Font("宋体", 10.5F);
             直方图均衡化按钮.Location = new Point(226, 27);
             直方图均衡化按钮.Name = "直方图均衡化按钮";
             直方图均衡化按钮.Size = new Size(59, 24);
@@ -619,7 +623,7 @@ namespace 控件 {
             // Canny按钮
             // 
             Canny按钮.AutoSize = true;
-            Canny按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Canny按钮.Font = new Font("宋体", 10.5F);
             Canny按钮.Location = new Point(226, 77);
             Canny按钮.Name = "Canny按钮";
             Canny按钮.Size = new Size(59, 24);
@@ -632,7 +636,7 @@ namespace 控件 {
             // Sobel按钮
             // 
             Sobel按钮.AutoSize = true;
-            Sobel按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Sobel按钮.Font = new Font("宋体", 10.5F);
             Sobel按钮.Location = new Point(226, 52);
             Sobel按钮.Name = "Sobel按钮";
             Sobel按钮.Size = new Size(59, 24);
@@ -645,7 +649,7 @@ namespace 控件 {
             // 标背景按钮
             // 
             标背景按钮.AutoSize = true;
-            标背景按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            标背景按钮.Font = new Font("宋体", 10.5F);
             标背景按钮.Location = new Point(3, 2);
             标背景按钮.Name = "标背景按钮";
             标背景按钮.Size = new Size(59, 24);
@@ -658,7 +662,7 @@ namespace 控件 {
             // 二值化按钮
             // 
             二值化按钮.AutoSize = true;
-            二值化按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            二值化按钮.Font = new Font("宋体", 10.5F);
             二值化按钮.Location = new Point(3, 27);
             二值化按钮.Name = "二值化按钮";
             二值化按钮.Size = new Size(59, 24);
@@ -671,7 +675,7 @@ namespace 控件 {
             // 递归连通按钮
             // 
             递归连通按钮.AutoSize = true;
-            递归连通按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            递归连通按钮.Font = new Font("宋体", 10.5F);
             递归连通按钮.Location = new Point(3, 102);
             递归连通按钮.Name = "递归连通按钮";
             递归连通按钮.Size = new Size(73, 24);
@@ -695,7 +699,7 @@ namespace 控件 {
             // 阈值胀蚀按钮
             // 
             阈值胀蚀按钮.AutoSize = true;
-            阈值胀蚀按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            阈值胀蚀按钮.Font = new Font("宋体", 10.5F);
             阈值胀蚀按钮.Location = new Point(3, 77);
             阈值胀蚀按钮.Name = "阈值胀蚀按钮";
             阈值胀蚀按钮.Size = new Size(59, 24);
@@ -708,7 +712,7 @@ namespace 控件 {
             // 取边缘按钮
             // 
             取边缘按钮.AutoSize = true;
-            取边缘按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            取边缘按钮.Font = new Font("宋体", 10.5F);
             取边缘按钮.Location = new Point(3, 52);
             取边缘按钮.Name = "取边缘按钮";
             取边缘按钮.Size = new Size(59, 24);
@@ -759,7 +763,7 @@ namespace 控件 {
             // R转H按钮
             // 
             R转H按钮.AutoSize = true;
-            R转H按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            R转H按钮.Font = new Font("宋体", 10.5F);
             R转H按钮.Location = new Point(562, 3);
             R转H按钮.Name = "R转H按钮";
             R转H按钮.Size = new Size(45, 24);
@@ -772,7 +776,7 @@ namespace 控件 {
             // H转R按钮
             // 
             H转R按钮.AutoSize = true;
-            H转R按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            H转R按钮.Font = new Font("宋体", 10.5F);
             H转R按钮.Location = new Point(613, 3);
             H转R按钮.Name = "H转R按钮";
             H转R按钮.Size = new Size(45, 24);
@@ -797,7 +801,7 @@ namespace 控件 {
             // 数点按钮
             // 
             数点按钮.AutoSize = true;
-            数点按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            数点按钮.Font = new Font("宋体", 10.5F);
             数点按钮.Location = new Point(670, 3);
             数点按钮.Name = "数点按钮";
             数点按钮.Size = new Size(45, 24);
@@ -832,7 +836,7 @@ namespace 控件 {
             // 
             // 验证码
             // 
-            验证码.Location = new Point(726, 4);
+            验证码.Location = new Point(1017, 77);
             验证码.Name = "验证码";
             验证码.Size = new Size(64, 23);
             验证码.TabIndex = 56;
@@ -844,6 +848,9 @@ namespace 控件 {
             // panel1
             // 
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel1.Controls.Add(验证码字符数);
+            panel1.Controls.Add(label字符数);
+            panel1.Controls.Add(验证码字串);
             panel1.Controls.Add(toolStrip4);
             panel1.Controls.Add(验证码);
             panel1.Controls.Add(黑掉背景);
@@ -888,14 +895,23 @@ namespace 控件 {
             panel1.Size = new Size(1219, 128);
             panel1.TabIndex = 10;
             // 
+            // 验证码字串
+            // 
+            验证码字串.BorderStyle = BorderStyle.FixedSingle;
+            验证码字串.Location = new Point(911, 77);
+            验证码字串.MaxLength = 8;
+            验证码字串.Name = "验证码字串";
+            验证码字串.Size = new Size(100, 23);
+            验证码字串.TabIndex = 58;
+            // 
             // toolStrip4
             // 
             toolStrip4.AutoSize = false;
             toolStrip4.Dock = DockStyle.None;
-            toolStrip4.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip4.Font = new Font("微软雅黑", 10.5F);
             toolStrip4.Items.AddRange(new ToolStripItem[] { toolStripLabel8, 内噪百分比, toolStripLabel9, 外噪百分比, toolStripLabel10, 随机线条 });
             toolStrip4.LayoutStyle = ToolStripLayoutStyle.Flow;
-            toolStrip4.Location = new Point(796, 4);
+            toolStrip4.Location = new Point(911, 48);
             toolStrip4.Name = "toolStrip4";
             toolStrip4.Size = new Size(261, 23);
             toolStrip4.TabIndex = 57;
@@ -912,13 +928,13 @@ namespace 控件 {
             // 内噪百分比
             // 
             内噪百分比.BorderStyle = BorderStyle.None;
-            内噪百分比.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            内噪百分比.Font = new Font("微软雅黑", 12F);
             内噪百分比.ForeColor = SystemColors.ControlText;
             内噪百分比.MaxLength = 3;
             内噪百分比.Name = "内噪百分比";
             内噪百分比.Size = new Size(30, 22);
             内噪百分比.Text = "10";
-            内噪百分比.ToolTipText = "W值,乘";
+            内噪百分比.ToolTipText = "内部噪点比例";
             // 
             // toolStripLabel9
             // 
@@ -930,13 +946,13 @@ namespace 控件 {
             // 外噪百分比
             // 
             外噪百分比.BorderStyle = BorderStyle.None;
-            外噪百分比.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            外噪百分比.Font = new Font("微软雅黑", 12F);
             外噪百分比.ForeColor = SystemColors.ControlText;
             外噪百分比.MaxLength = 3;
             外噪百分比.Name = "外噪百分比";
             外噪百分比.Size = new Size(30, 22);
             外噪百分比.Text = "7";
-            外噪百分比.ToolTipText = "b值,加";
+            外噪百分比.ToolTipText = "外部噪点比例";
             // 
             // toolStripLabel10
             // 
@@ -954,7 +970,7 @@ namespace 控件 {
             // 测试按钮
             // 
             测试按钮.AutoSize = true;
-            测试按钮.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            测试按钮.Font = new Font("宋体", 10.5F);
             测试按钮.Location = new Point(240, 102);
             测试按钮.Name = "测试按钮";
             测试按钮.Size = new Size(45, 24);
@@ -973,7 +989,7 @@ namespace 控件 {
             groupBox1.Controls.Add(radioButton线);
             groupBox1.Controls.Add(radioButton点);
             groupBox1.Controls.Add(radioButton不画);
-            groupBox1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft YaHei UI", 10.5F);
             groupBox1.Location = new Point(563, 32);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(227, 80);
@@ -1064,7 +1080,7 @@ namespace 控件 {
             // toolStrip3
             // 
             toolStrip3.Dock = DockStyle.None;
-            toolStrip3.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip3.Font = new Font("微软雅黑", 10.5F);
             toolStrip3.Items.AddRange(new ToolStripItem[] { toolStripLabel3, 算子直径, toolStripLabel7, 胀蚀阈值 });
             toolStrip3.LayoutStyle = ToolStripLayoutStyle.Flow;
             toolStrip3.Location = new Point(65, 77);
@@ -1084,7 +1100,7 @@ namespace 控件 {
             // 算子直径
             // 
             算子直径.BorderStyle = BorderStyle.None;
-            算子直径.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            算子直径.Font = new Font("微软雅黑", 12F);
             算子直径.ForeColor = SystemColors.ControlText;
             算子直径.MaxLength = 2;
             算子直径.Name = "算子直径";
@@ -1103,7 +1119,7 @@ namespace 控件 {
             // 胀蚀阈值
             // 
             胀蚀阈值.BorderStyle = BorderStyle.None;
-            胀蚀阈值.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            胀蚀阈值.Font = new Font("微软雅黑", 12F);
             胀蚀阈值.ForeColor = SystemColors.ControlText;
             胀蚀阈值.MaxLength = 4;
             胀蚀阈值.Name = "胀蚀阈值";
@@ -1116,7 +1132,7 @@ namespace 控件 {
             // toolStrip2
             // 
             toolStrip2.Dock = DockStyle.None;
-            toolStrip2.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip2.Font = new Font("微软雅黑", 10.5F);
             toolStrip2.Items.AddRange(new ToolStripItem[] { 下限标签, H下, toolStripSeparator7, S下, toolStripSeparator8, L下 });
             toolStrip2.LayoutStyle = ToolStripLayoutStyle.Flow;
             toolStrip2.Location = new Point(65, 28);
@@ -1136,7 +1152,7 @@ namespace 控件 {
             // H下
             // 
             H下.BorderStyle = BorderStyle.None;
-            H下.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            H下.Font = new Font("微软雅黑", 12F);
             H下.ForeColor = Color.Purple;
             H下.MaxLength = 3;
             H下.Name = "H下";
@@ -1153,7 +1169,7 @@ namespace 控件 {
             // S下
             // 
             S下.BorderStyle = BorderStyle.None;
-            S下.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            S下.Font = new Font("微软雅黑", 12F);
             S下.ForeColor = SystemColors.ControlDarkDark;
             S下.MaxLength = 3;
             S下.Name = "S下";
@@ -1170,7 +1186,7 @@ namespace 控件 {
             // L下
             // 
             L下.BorderStyle = BorderStyle.None;
-            L下.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            L下.Font = new Font("微软雅黑", 12F);
             L下.ForeColor = SystemColors.ControlText;
             L下.MaxLength = 3;
             L下.Name = "L下";
@@ -1182,7 +1198,7 @@ namespace 控件 {
             // toolStrip1
             // 
             toolStrip1.Dock = DockStyle.None;
-            toolStrip1.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip1.Font = new Font("微软雅黑", 10.5F);
             toolStrip1.Items.AddRange(new ToolStripItem[] { 上限标签, H上, toolStripSeparator5, S上, toolStripSeparator6, L上 });
             toolStrip1.LayoutStyle = ToolStripLayoutStyle.Flow;
             toolStrip1.Location = new Point(65, 2);
@@ -1203,7 +1219,7 @@ namespace 控件 {
             // H上
             // 
             H上.BorderStyle = BorderStyle.None;
-            H上.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            H上.Font = new Font("微软雅黑", 12F);
             H上.ForeColor = Color.Purple;
             H上.MaxLength = 3;
             H上.Name = "H上";
@@ -1220,7 +1236,7 @@ namespace 控件 {
             // S上
             // 
             S上.BorderStyle = BorderStyle.None;
-            S上.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            S上.Font = new Font("微软雅黑", 12F);
             S上.ForeColor = SystemColors.ControlDarkDark;
             S上.MaxLength = 3;
             S上.Name = "S上";
@@ -1237,7 +1253,7 @@ namespace 控件 {
             // L上
             // 
             L上.BorderStyle = BorderStyle.None;
-            L上.Font = new Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            L上.Font = new Font("微软雅黑", 12F);
             L上.ForeColor = SystemColors.ControlText;
             L上.MaxLength = 3;
             L上.Name = "L上";
@@ -1245,6 +1261,25 @@ namespace 控件 {
             L上.Text = "240";
             L上.ToolTipText = "L亮度值上限";
             L上.TextChanged += HSL上下限_TextChanged;
+            // 
+            // label字符数
+            // 
+            label字符数.AutoSize = true;
+            label字符数.Location = new Point(1083, 81);
+            label字符数.Name = "label字符数";
+            label字符数.Size = new Size(56, 17);
+            label字符数.TabIndex = 59;
+            label字符数.Text = "字符数：";
+            // 
+            // 验证码字符数
+            // 
+            验证码字符数.BorderStyle = BorderStyle.FixedSingle;
+            验证码字符数.Location = new Point(1134, 77);
+            验证码字符数.MaxLength = 2;
+            验证码字符数.Name = "验证码字符数";
+            验证码字符数.Size = new Size(38, 23);
+            验证码字符数.TabIndex = 60;
+            验证码字符数.Text = "4";
             // 
             // 功能标签页
             // 
@@ -1386,5 +1421,8 @@ namespace 控件 {
         private ToolStripTextBox 外噪百分比;
         private ToolStripLabel toolStripLabel10;
         private ToolStripTextBox 随机线条;
+        private TextBox 验证码字串;
+        private TextBox 验证码字符数;
+        private Label label字符数;
     }
 }
