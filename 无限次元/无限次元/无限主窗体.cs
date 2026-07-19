@@ -212,7 +212,9 @@ public partial class 无限主窗体 : Form {
             添加新图片页(位图, 文件名);
         } else if (功能 == "验证码") {
             计时开始((Button)sender);
-            string 码 = 验证码.随N个字符(4);
+            string 码 = 参数.验证码字串.Trim();
+            if(参数.验证码字串.Length == 0)
+                码 = 验证码.随N个字符(参数.验证码字符数);
             Bitmap 码图 = 验证码.画空旋噪验证码(码);
             计时结束((Button)sender);
             添加新图片页(码图, "验证码: " + 码);
