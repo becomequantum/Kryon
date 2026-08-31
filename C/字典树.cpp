@@ -840,77 +840,11 @@ int main() {
     std::vector<std::wstring> AC测试1 = { L"he", L"hers",L"his",L"she"};
     //字串组 = {L"a"};//{ L"po", L"prepare",L"preview" };
     //std::vector<std::wstring> 字串组 = { L"prepare",L"prepbbbb" };
-    /*auto 词表 = 读入词库("dictionary.txt");
-    横表字典树<横表数组节点<字母区间[英文].长>> 横英树(词表, 英文);
-    横英树.打印树信息();*/
-    /*auto 词表 = 读入词库("dictionary.txt");
-    横表字典树<横表哈希节点> 横英哈希树(词表, 英文);
-    横表字典树<横表数组节点<字母区间[英文].长>> 横英数组树(词表, 英文);*/
-    //横英树.打印树信息();
-    //剪枝压缩字典树 剪枝树(横英树);
-    //剪枝树.打印状态表();
-    //横英树.压缩();
-
-    //横英树.加载双数组("英词双数组");
-   
-   /* std::wstring 汉字 = L"打印汉字";
-    size_t N = 0;
-    WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), 汉字.c_str(), 汉字.size(), NULL, NULL);*/
-
-     //剪枝树.压缩();
+    //剪枝树.压缩();
      
 
-      //横英树.打印状态表();
-    //剪枝树.打印状态表();
-    /*for (size_t i = 0; i < 10000; i++) {
-        std::cout << 横英哈希树.双数组查词(字串组[i]) << std::endl;
-        std::cout << 横英数组树.双数组查词(字串组[i]) << std::endl;
-    }*/
-   
-    //std::cout << 剪枝树.查词(L"preeeeee") << std::endl;
-
-   /* auto 词表 = 读入词库("dictionary.txt");
-    横表字典树<横表数组节点<字母区间[英文].长>> 英树(词表, 英文);
-    英树.打印树信息();*/
-
-    //横表字典树<横表哈希节点> 横英树(字串组, 英文);
-    /*auto 结果 = 横英树.查词(L"prepare");
-    std::cout << 结果.节点号 << " " << 结果.词序号 << " " << 结果.字母号 << "\n\n";*/
-    //横英树.打印状态表();
-
     字典树性能测试();
-    
-   
-
-
-   /* for (size_t i = 0; i < 10; i++) {
-        std::cout<< Unicode转其它(词表[i], CP_ACP) << " "<< 词表[i].size() << std::endl;
-    }*/
-   
-
-    //auto 词表 = 读入词库("dictionary.txt");
-    //词表 = 字串组;
-     //std::sort(词表.begin(), 词表.end(), [](std::wstring a, std::wstring b) { return a.size() < b.size(); });
-    //auto 中词表 = 读入词库("cn.txt");*/
-    //for (auto 词 : 中词表) 词表.push_back(词);
-    //横表字典树<横表哈希节点> 哈希树(词表, 中英);
-    //词表 = 读入词库("dictionary.txt");
-    //哈希树.打印树信息();
-   
-    // 横表字典树<横表数组节点<字母区间[英文].长>> 英树(词表, 英文);
-    //size_t n = 0;
-   /*for (size_t i = 0; i < 词表.size(); i++) {
-       if (哈希树.查词(词表[i]).词序号 < 0) {
-           std::cout << 哈希树.查词(词表[i]).词序号 << ",  ";
-           std::cout << Unicode转其它(词表[i], CP_ACP) << std::endl;
-           n++;
-       }
-
-   }*/
-   //std::cout << n << std::endl;
-    //哈希树.打印表信息();
-   
-    
+     
      
 
 }
