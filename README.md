@@ -1,6 +1,8 @@
 联系请用: B站私信 
 
-### “推荐书籍.zip” 里面有我翻译的克里昂信息，《与神对话》，《巨婴国》《二氧化氯MMS使用手册》《儿童疫苗风险》等书籍资料
+### “推荐书籍.zip” 里面有我翻译的克里昂信息，《与神对话》，《巨婴国》《二氧化氯MMS使用手册》《儿童疫苗风险》等书籍资料 
+
+### [GitCode上的新开源库](https://gitcode.com/setting/repo), 里面有我的Obsidian学习笔记库, 还有正在写的双数组AC自动机库
 
 ## 我写的文章：
 [哲学入门](https://becomequantum.github.io/docs/blog/%E5%93%B2%E5%AD%A6%E5%85%A5%E9%97%A8.html)  
